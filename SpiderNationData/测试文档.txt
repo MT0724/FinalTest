@@ -1,0 +1,3 @@
+本项目就是爬取了国家统计局网站近20年的人口数据、人民币对外汇率数据以及财政数据，将2009-2018年这10年的数据信息存入数据库。用图表表示就是生成的6个图，分别为1_total_population.png，2_percentage.png，3_financedata.png，4_growthrate.png，5_exchangerate_mo.png, 6_exchangerate_rg.png，已经保存到本项目工作目录下。
+爬取存在一个小问题，比如在爬取财政数据时查看网页“检查”选项，设置其参数keyvalue['dfwds']时，valuecode（代码值的值设置为A0801，但当爬取出的数据financedata打印出来时，对应的valuecode(代码值）却变成A0101，不知道是什么原因，所以改变了策略，分别对四行数据进行爬取，虽然代码显得有些冗余，但是爬取的结果是正确的。
+不过对于中间遇到的问题，我会再学习，争取找到问题所在。

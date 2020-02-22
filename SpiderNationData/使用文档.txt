@@ -1,0 +1,6 @@
+（1）首先，因为本项目是爬虫，所以打开命令行，安装requests、time、json库
+  即命令 ：pip install ~
+（2）其次，由于需要用到数据库，考虑到sqlite具有给自足、无服务器、零配置等优点，所以打开命令行，使用命令pip install sqlite3，安装sqlite3库
+（3）最后，因为涉及从数据库表中读取数据进行绘图，所以安装matplotlib库，命令如(1)(2)所示
+（4）在database.py中，改变数据库的存放路径，将数据库建立到自己设置的某个文件夹下。
+一切配置妥当后，分别运行spydata.py，database.py，plotview.py，发现没有错误后再运行main.py即可。

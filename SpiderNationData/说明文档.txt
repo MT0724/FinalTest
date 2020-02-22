@@ -1,0 +1,32 @@
+这个项目是一个简单的爬虫，利用网络爬虫爬取国家统计局人口和财政以及人民币对外汇率数据并写入本地数据库（这个数据库直接更改代码中路径建立到自己的工作目录，或者是自己想建立的地方）
+再从数据库中读取数据利用matplotlib制图，将这些数据可视化
+
+一共有4个.py文件，main.py用来实现另外3个模块的功能，另外3个模块功能如下:
+
+1.spydata.py
+此模块是从国家统计局网站爬取人口、人民币对外汇率和财政数据，返回json格式的数据：
+包含3个函数，分别是getpopula_data()，getfinance_data()，getexchange_rate()
+功能介绍:
+a) getpopula_data()：爬取人口数据
+b) getfinance_data()：爬取财政数据
+c) getexchange_rate()：爬取人民币对外汇率数据
+
+2.database.py
+此模块是建立数据库并将爬取的数据插入到对应的表中：
+包含6个函数，分别是insert_populationdata(), insert_financedata()，insert_exchangerate(), 
+select_population(), select_finance(), select_rate()
+功能介绍:
+a) insert_populationdata()：在数据库中创建一个数据表"population"，并将爬取到的人口数据写入此表
+b) insert_financedata()：在数据库中创建一个数据表"finance"，并将爬取到的财政数据写入此表
+c) insert_exchangerate()：在数据库中创建一个数据表"exchangedata",并将爬取到的汇率数据写入此表
+d) select_population()：从数据库中"population"数据表中读取人口数据
+e) select_finance()：从数据库中"finance"数据表中读取财政数据
+f) select_rate()：从数据库中“exchangedata"数据表读取人民币对外汇率数据
+
+2.plotview.py
+此模块是从数据库读取爬到的数据进行可视化：
+包含4个函数，分别是population_draw(),finance_draw()
+功能介绍:
+a) population_draw()：利用读取到的人口数据绘图
+b) finance_draw()：利用读取到的财政数据绘图
+
